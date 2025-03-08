@@ -22,7 +22,6 @@ const Navigation: React.FC = () => {
         <div className="text-xl font-bold mb-4 md:mb-0">
           <Link href="/" className="flex items-center">
             <span className="text-2xl mr-2">🤖</span>
-            Tulu3 학습 데이터 분석
           </Link>
         </div>
         <ul className="flex flex-wrap justify-center space-x-1 md:space-x-4">

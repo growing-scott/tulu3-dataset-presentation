@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import FloatingButton from "../components/FloatingButton";
+import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -16,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={inter.variable + " font-sans"}>{children}</body>
+      <body className={inter.variable + " font-sans"}>
+        <div className="page-transition page-transition-enter-active">
+          {children}
+        </div>
+        <FloatingButton />
+      </body>
     </html>
   );
 } 
