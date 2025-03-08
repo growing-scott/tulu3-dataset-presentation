@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulu 3 프레젠테이션</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Mermaid JS 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="app.js" type="module"></script>
+    <!-- 음성 인식 및 합성을 위한 컨트롤 -->
+    <div id="voice-controls">
+        <button id="voice-recognition-btn" title="음성 명령 시작/중지">
+            <span class="icon">🎤</span>
+        </button>
+        <button id="text-to-speech-btn" title="현재 슬라이드 읽기">
+            <span class="icon">🔊</span>
+        </button>
+        <div id="voice-status">음성 인식 비활성화</div>
+    </div>
+</body>
+</html> 

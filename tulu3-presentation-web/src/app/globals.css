@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.slide-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+}
+
+.slide-title {
+  @apply text-3xl md:text-4xl font-bold mb-6 text-center;
+}
+
+.slide-subtitle {
+  @apply text-xl md:text-2xl font-semibold mb-4;
+}
+
+.slide-text {
+  @apply text-base md:text-lg mb-4;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+}
+
+.code-block {
+  @apply bg-gray-100 dark:bg-gray-900 rounded-md p-4 overflow-x-auto my-4;
+}
+
+.highlight {
+  @apply bg-primary-100 dark:bg-primary-900 px-1 py-0.5 rounded;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary-500 text-white hover:bg-primary-600;
+}
+
+.btn-secondary {
+  @apply bg-secondary-500 text-white hover:bg-secondary-600;
+}
+
+.btn-outline {
+  @apply border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800;
+}
+
+.section {
+  @apply py-12 md:py-16;
+}
+
+.grid-cols-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mermaid 다이어그램 스타일 */
+.mermaid-diagram {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.dark .mermaid-diagram {
+  background-color: rgba(17, 24, 39, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 다크 모드에서 다이어그램 텍스트 색상 조정 */
+.dark .mermaid-diagram text {
+  fill: #e2e8f0 !important;
+  font-weight: 500 !important;
+}
+
+.dark .mermaid-diagram .label {
+  color: #e2e8f0 !important;
+  font-weight: 500 !important;
+}
+
+/* 다이어그램 노드 스타일 */
+.mermaid-diagram .node rect,
+.mermaid-diagram .node circle,
+.mermaid-diagram .node ellipse,
+.mermaid-diagram .node polygon,
+.mermaid-diagram .node path {
+  fill: #f0f9ff !important;
+  stroke: #0284c7 !important;
+  stroke-width: 2px !important;
+  rx: 6px !important;
+  ry: 6px !important;
+}
+
+.dark .mermaid-diagram .node rect,
+.dark .mermaid-diagram .node circle,
+.dark .mermaid-diagram .node ellipse,
+.dark .mermaid-diagram .node polygon,
+.dark .mermaid-diagram .node path {
+  fill: #1e40af !important;
+  stroke: #38bdf8 !important;
+  stroke-width: 2px !important;
+}
+
+/* 다이어그램 선 스타일 */
+.mermaid-diagram .edgePath .path {
+  stroke: #64748b !important;
+  stroke-width: 2px !important;
+}
+
+.dark .mermaid-diagram .edgePath .path {
+  stroke: #94a3b8 !important;
+  stroke-width: 2px !important;
+}
+
+/* 다이어그램 화살표 스타일 */
+.mermaid-diagram .arrowheadPath {
+  fill: #64748b !important;
+  stroke-width: 2px !important;
+}
+
+.dark .mermaid-diagram .arrowheadPath {
+  fill: #94a3b8 !important;
+  stroke-width: 2px !important;
+}
+
+/* 서브그래프 스타일 */
+.mermaid-diagram .cluster rect {
+  fill: #f1f5f9 !important;
+  stroke: #0284c7 !important;
+  stroke-width: 2px !important;
+  rx: 8px !important;
+  ry: 8px !important;
+}
+
+.dark .mermaid-diagram .cluster rect {
+  fill: #0f172a !important;
+  stroke: #38bdf8 !important;
+  stroke-width: 2px !important;
+}
+
+/* 서브그래프 제목 스타일 */
+.mermaid-diagram .cluster .label {
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
+
+/* 노드 텍스트 스타일 */
+.mermaid-diagram .label {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif !important;
+  font-size: 13px !important;
+}
+
+.mermaid-diagram .nodeLabel {
+  background-color: transparent !important;
+  padding: 2px 4px !important;
+}
+
+.dark .mermaid-diagram .nodeLabel {
+  color: white !important;
+}
+
+/* 다이어그램 확대 애니메이션 */
+.mermaid-diagram {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mermaid-diagram:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.dark .mermaid-diagram:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* 엣지 레이블 스타일 */
+.mermaid-diagram .edgeLabel {
+  background-color: white !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  color: #334155 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.dark .mermaid-diagram .edgeLabel {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #475569 !important;
+} 
