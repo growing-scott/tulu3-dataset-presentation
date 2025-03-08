@@ -399,16 +399,6 @@ export default function FloatingButton() {
         </>
       )}
 
-      {/* 키보드 단축키 도움말 */}
-      <div className="fixed top-4 right-4 z-40 bg-white/80 backdrop-blur-sm rounded-lg shadow-md p-3 text-sm text-gray-700 transition-opacity duration-300 opacity-0 hover:opacity-100">
-        <div className="font-medium mb-1">단축키 및 음성 명령:</div>
-        <ul>
-          <li><kbd className="px-1 py-0.5 bg-gray-100 rounded">Alt</kbd> + <kbd className="px-1 py-0.5 bg-gray-100 rounded">←</kbd> / <kbd className="px-1 py-0.5 bg-gray-100 rounded">→</kbd>: 이전/다음 슬라이드</li>
-          <li><kbd className="px-1 py-0.5 bg-gray-100 rounded">Alt</kbd> + <kbd className="px-1 py-0.5 bg-gray-100 rounded">1-6</kbd>: 특정 슬라이드로 이동</li>
-          <li className="mt-1">🎤 음성 명령: "다음", "이전"</li>
-        </ul>
-      </div>
-
       <div className="fixed bottom-8 right-8 z-50">
         {/* 마이크 버튼 - 메뉴 버튼 상단에 위치 */}
         <button
