@@ -1,13 +1,17 @@
-import Navigation from '@/components/Navigation';
-import dynamic from 'next/dynamic';
+// import Navigation from '@/components/Navigation';
+import { dataProcessingSteps } from '@/data/tulu3Data';
+import MermaidDiagram from '@/components/MermaidDiagram';
 
 // 클라이언트 컴포넌트를 서버 컴포넌트에서 사용하기 위해 dynamic import 사용
-const MermaidDiagram = dynamic(
-  () => import('@/components/MermaidDiagram'),
-  { ssr: false }
-);
+// const MermaidDiagram = dynamic(
+//   () => import('@/components/MermaidDiagram'),
+//   { ssr: false }
+// );
 
 export default function TrainingPage() {
+  // Training 단계 정보 가져오기
+  const trainingStep = dataProcessingSteps.find(step => step.id === 'training');
+
   // 첫 번째 다이어그램 데이터
   const datasetPipelineChart = `%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0284c7', 'primaryTextColor': '#0f172a', 'primaryBorderColor': '#0284c7', 'lineColor': '#64748b', 'secondaryColor': '#7dd3fc', 'tertiaryColor': '#f1f5f9' }}}%%
 graph TD
@@ -128,14 +132,12 @@ graph TD
     class T evalNode`;
 
   return (
-    <main className="min-h-screen">
-      <Navigation />
-      
-      <section className="bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
+    <main className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-b from-indigo-600 to-purple-600 text-white py-16 px-4">
         <div className="slide-container">
-          <h1 className="slide-title">Tulu3 학습 과정</h1>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            Tulu3 모델의 학습 데이터셋 생성 및 학습 파이프라인
+          <h1 className="slide-title text-white">모델 학습 과정</h1>
+          <p className="text-center text-white mb-8">
+            Tulu3 모델의 학습 과정과 주요 기술적 결정 사항에 대한 설명
           </p>
         </div>
       </section>
@@ -227,7 +229,7 @@ graph TD
 
       <section className="section">
         <div className="slide-container">
-          <h2 className="slide-title">학습 데이터셋 생성</h2>
+          <h2 className="slide-title text-gray-800">학습 데이터셋 생성</h2>
           <div className="card mb-8">
             <p className="slide-text">
               Tulu3의 학습 데이터셋은 다양한 출처의 데이터를 수집하고, 철저한 큐레이션과 합성, 그리고 Decontamination을 통해 고품질의 학습 데이터를 구축하는 과정을 거쳤습니다.
@@ -245,7 +247,7 @@ graph TD
 
       <section className="section">
         <div className="slide-container">
-          <h2 className="slide-title">결론</h2>
+          <h2 className="slide-title text-gray-800">결론</h2>
           
           <div className="card">
             <p className="slide-text">

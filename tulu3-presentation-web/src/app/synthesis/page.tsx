@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation';
+// import Navigation from '@/components/Navigation';
 import { dataProcessingSteps, personaExamples } from '@/data/tulu3Data';
 
 export default function SynthesisPage() {
@@ -7,7 +7,7 @@ export default function SynthesisPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation />
+      {/* Navigation 컴포넌트 제거 */}
       
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">

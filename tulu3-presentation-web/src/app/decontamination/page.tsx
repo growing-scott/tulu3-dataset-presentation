@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation';
+// import Navigation from '@/components/Navigation';
 import { dataProcessingSteps } from '@/data/tulu3Data';
 
 export default function DecontaminationPage() {
@@ -6,23 +6,21 @@ export default function DecontaminationPage() {
   const decontaminationStep = dataProcessingSteps.find(step => step.id === 'decontamination');
 
   return (
-    <main className="min-h-screen">
-      <Navigation />
-      
-      <section className="bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
+    <main className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-b from-indigo-600 to-purple-600 text-white py-16 px-4">
         <div className="slide-container">
-          <h1 className="slide-title">Decontamination (데이터 비오염화)</h1>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
+          <h1 className="slide-title text-white">Decontamination (데이터 비오염화)</h1>
+          <p className="text-center text-white mb-8">
             모델이 평가 데이터(Test Set)를 미리 학습하는 문제를 방지하기 위한 과정
           </p>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white py-16">
         <div className="slide-container">
-          <h2 className="slide-title">Decontamination의 개념</h2>
+          <h2 className="slide-title text-gray-800">Decontamination의 개념</h2>
           <div className="card mb-8">
-            <p className="slide-text">
+            <p className="slide-text text-white">
               Decontamination은 모델이 평가 데이터(Test Set)를 미리 학습하는 문제를 방지하기 위한 과정입니다. 학습 데이터(Training Set)에서 평가 데이터와 겹치는 부분을 제거하여 모델 평가의 정확성을 보장합니다.
             </p>
           </div>
@@ -105,7 +103,7 @@ export default function DecontaminationPage() {
 
       <section className="section">
         <div className="slide-container">
-          <h2 className="slide-title">Decontamination 예시</h2>
+          <h2 className="slide-title text-gray-800">Decontamination 예시</h2>
           
           <div className="card mb-8">
             <h3 className="slide-subtitle">🚩 Before (중복 데이터가 존재하는 경우)</h3>

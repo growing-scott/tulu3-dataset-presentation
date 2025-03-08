@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import FloatingButton from "../components/FloatingButton";
+import StickyHeader from "../components/StickyHeader";
+import Navigation from "../components/Navigation";
 import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -19,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.variable + " font-sans"}>
+        <Navigation />
+        <StickyHeader title="Tulu3 학습 데이터 분석" />
         <div className="page-transition page-transition-enter-active">
           {children}
         </div>

@@ -1,13 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 import { dataCategories, dataProcessingSteps } from '@/data/tulu3Data';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation />
-      
       {/* 헤더 섹션 */}
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">

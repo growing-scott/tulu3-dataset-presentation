@@ -1,12 +1,15 @@
 "use client";
 
-import Navigation from '@/components/Navigation';
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+// import Navigation from '@/components/Navigation';
 import { dataCategories, mainDatasets, datasetDetails } from '@/data/tulu3Data';
 import dynamic from 'next/dynamic';
-import React, { useEffect } from 'react';
 
 // 클라이언트 컴포넌트로 Chart 동적 임포트
-const DynamicCharts = dynamic(() => import('@/components/DatasetCharts'), { ssr: false });
+const DynamicCharts = dynamic(() => import('@/components/DatasetCharts'), {
+  ssr: false,
+});
 
 export default function DatasetsPage() {
   // 데이터가 제대로 로드되었는지 확인
@@ -18,7 +21,7 @@ export default function DatasetsPage() {
   
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation />
+      {/* Navigation 컴포넌트 제거 */}
       
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">

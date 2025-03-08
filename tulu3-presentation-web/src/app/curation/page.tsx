@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation';
+// import Navigation from '@/components/Navigation';
 import { dataProcessingSteps } from '@/data/tulu3Data';
 
 export default function CurationPage() {
@@ -6,23 +6,21 @@ export default function CurationPage() {
   const curationStep = dataProcessingSteps.find(step => step.id === 'curation');
 
   return (
-    <main className="min-h-screen">
-      <Navigation />
-      
-      <section className="bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
+    <main className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-b from-indigo-600 to-purple-600 text-white py-16 px-4">
         <div className="slide-container">
-          <h1 className="slide-title">프롬프트 큐레이션 (Prompt Curation)</h1>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
+          <h1 className="slide-title text-white">프롬프트 큐레이션 (Prompt Curation)</h1>
+          <p className="text-center text-white mb-8">
             기존 데이터셋에서 품질이 높은 프롬프트를 선별하여 모델이 효율적으로 학습하도록 하는 과정
           </p>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white py-16">
         <div className="slide-container">
-          <h2 className="slide-title">프롬프트 큐레이션의 개념</h2>
+          <h2 className="slide-title text-gray-800">프롬프트 큐레이션의 개념</h2>
           <div className="card mb-8">
-            <p className="slide-text">
+            <p className="slide-text text-white">
               프롬프트 큐레이션은 기존 데이터셋에서 품질이 높은 프롬프트를 선별하여 모델이 효율적으로 학습하도록 하는 과정입니다. 불필요한 데이터(단순하거나 반복적인 데이터)를 제거하여 학습 효율성을 향상시킵니다.
             </p>
           </div>
@@ -90,7 +88,7 @@ export default function CurationPage() {
 
       <section className="section">
         <div className="slide-container">
-          <h2 className="slide-title">데이터 필터링 및 정제</h2>
+          <h2 className="slide-title text-gray-800">데이터 필터링 및 정제</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card">

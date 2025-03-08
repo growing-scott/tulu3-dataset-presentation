@@ -17,7 +17,7 @@ const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-800 to-purple-800 text-white p-4 shadow-lg">
+    <nav className="bg-gradient-to-r from-indigo-800 to-purple-800 text-white p-4 shadow-lg z-40 relative">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="text-xl font-bold mb-4 md:mb-0">
           <Link href="/" className="flex items-center">
