@@ -1,4 +1,4 @@
-import { DataCategory, DataProcessingStep, PersonaExample, DecontaminationExample, DatasetDetail, EtcSynthesisExample } from '../types';
+import { DataCategory, DataProcessingStep, DecontaminationExample, DatasetDetail } from '../types';
 
 // 데이터셋 정보 인터페이스
 interface DatasetInfo {
