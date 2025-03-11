@@ -43,6 +43,12 @@ export interface PersonaExample {
   response: string;
 }
 
+export interface EtcSynthesisExample {
+  type: string;
+  prompt: string;
+  response: string;
+}
+
 export interface DecontaminationExample {
   before: string;
   after: string;
