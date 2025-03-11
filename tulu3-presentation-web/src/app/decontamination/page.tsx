@@ -20,8 +20,8 @@ export default function DecontaminationPage() {
         <div className="slide-container">
           <h2 className="slide-title text-gray-800">Decontamination의 개념</h2>
           <div className="card mb-8">
-            <p className="slide-text text-white">
-              Decontamination은 모델이 평가 데이터(Test Set)를 미리 학습하는 문제를 방지하기 위한 과정입니다. 학습 데이터(Training Set)에서 평가 데이터와 겹치는 부분을 제거하여 모델 평가의 정확성을 보장합니다.
+            <p className="slide-text">
+              Decontamination은 모델이 평가 데이터(Test Set)를 미리 학습하는 문제를 방지하기 위한 과정입니다. <br/>학습 데이터(Training Set)에서 평가 데이터와 겹치는 부분을 제거하여 모델 평가의 정확성을 보장합니다.
             </p>
           </div>
 
@@ -74,12 +74,12 @@ export default function DecontaminationPage() {
                 학습 데이터와 평가 데이터 간 유사성을 다양한 방법으로 검사합니다.
               </p>
               <div className="bg-gray-100 dark:bg-gray-900 p-3 rounded">
-                <p className="font-semibold">유사도 평가 방법:</p>
+                <p className="font-semibold">유사도 평가 방법</p>
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>N-gram 매칭</li>
-                  <li>Cosine Similarity</li>
-                  <li>Jaccard Index</li>
-                  <li>Dense Embeddings</li>
+                  <li>N-gram 매칭: 연속된 N개 단어 단위로 겹치는 정도 비교</li>
+                  <li>Cosine Similarity: 문장 간 벡터 유사도 계산</li>
+                  <li>Jaccard Index: 두 집합의 교집합 비율로 유사도 계산</li>
+                  <li>Dense Embeddings: 의미적 유사도 계산</li>
                 </ul>
               </div>
             </div>
