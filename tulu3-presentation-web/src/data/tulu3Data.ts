@@ -1,9 +1,22 @@
-import { DataCategory, DataProcessingStep, PersonaExample, DecontaminationExample, DatasetDetail } from '../types';
+import { DataCategory, DataProcessingStep, PersonaExample, DecontaminationExample, DatasetDetail, EtcSynthesisExample } from '../types';
 
 // 데이터셋 정보 인터페이스
 interface DatasetInfo {
   name: string;
   description: string;
+}
+
+interface PersonaExample {
+  persona: string;
+  prompt: string;
+  response: string;
+}
+
+interface EtcSynthesisExample {
+  type: string;
+  prompt: string;
+  response: string;
+  persona?: string;
 }
 
 // 데이터 카테고리 정의
@@ -442,8 +455,8 @@ export const dataProcessingSteps: DataProcessingStep[] = [
     description: '새로운 프롬프트를 인공적으로 생성하여 데이터 다양성을 확보하는 과정입니다.',
     details: [
       '페르소나 기반 접근법을 통한 다양한 관점 생성',
-      '셀프 플레이 및 부트스트래핑을 통한 데이터 확장',
-      '대형 언어 모델을 교사로 활용한 데이터 생성',
+      'Self-Play & Bootstrapping을 통한 데이터 확장',
+      'LLM-as-a-Teacher / 대형 언어 모델을 교사로 활용한 데이터 생성',
       '데이터 증강 및 변형을 통한 다양성 확보'
     ]
   },
@@ -476,6 +489,25 @@ export const personaExamples: PersonaExample[] = [
     persona: '교육자',
     prompt: '초등학생들에게 기후 변화를 어떻게 가르칠 수 있을까요?',
     response: '초등학생들에게 기후 변화를 가르치기 위해서는 1) 간단한 실험과 시각적 자료 활용, 2) 스토리텔링을 통한 감정적 연결, 3) 일상생활에서 실천할 수 있는 작은 행동 강조, 4) 자연 관찰 활동과 현장 학습, 5) 긍정적인 변화 가능성 강조가 효과적입니다. 학생들의 나이와 이해 수준에 맞게 복잡한 개념을 단순화하고, 두려움보다는 희망과 행동에 초점을 맞추는 것이 중요합니다.'
+  }
+];
+
+// 그 외 합성 예시
+export const etcSynthesisExamples: EtcSynthesisExample[] = [
+  {
+    type: 'Self-Play & Bootstrapping',
+    prompt: '광합성이란 무엇인가?',
+    response: 'AI 생성 질문: 지구상에서 광합성이 멈추면 어떤 일이 벌어질까?'
+  },
+  {
+    type: 'LLM-as-a-Teacher',
+    prompt: 'GPT-4 활용: "광합성 과정을 설명해줘."',
+    response: '식물에서 일어나는 광합성의 화학적 과정을 자세히 설명해줘.'
+  },
+  {
+    type: 'Augmentation & Variation',
+    prompt: '광합성 작용에 대해 설명하라.',
+    response: '광합성의 화학적 과정에 대해 서술하시오.'
   }
 ];
 
