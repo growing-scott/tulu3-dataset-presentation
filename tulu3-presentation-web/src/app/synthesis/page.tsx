@@ -1,5 +1,5 @@
 // import Navigation from '@/components/Navigation';
-import { dataProcessingSteps, personaExamples } from '@/data/tulu3Data';
+import { dataProcessingSteps, personaExamples, etcSynthesisExamples } from '@/data/tulu3Data';
 
 export default function SynthesisPage() {
   // 합성 단계 정보 가져오기
@@ -62,7 +62,7 @@ export default function SynthesisPage() {
                 )}
                 {index === 1 && (
                   <p className="text-gray-900">
-                    모델이 생성한 응답을 다시 입력으로 사용하여 더 복잡하거나 심화된 프롬프트를 생성하는 방식입니다. 이는 모델의 능력을 점진적으로 향상시키는 데 효과적입니다.
+                    AI가 스스로 질문을 만들고 답을 생성하여 데이터 확장<br/>모델이 생성한 응답을 다시 입력으로 사용하여 더 복잡하거나 심화된 프롬프트를 생성하는 방식입니다. 이는 모델의 능력을 점진적으로 향상시키는 데 효과적입니다.
                   </p>
                 )}
                 {index === 2 && (
@@ -102,6 +102,28 @@ export default function SynthesisPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">그 외 합성 예시</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {etcSynthesisExamples.map((example, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-indigo-50 p-3 rounded-t-lg">
+                  <h3 className="font-bold text-gray-900">{example.type}</h3>
+                </div>
+                <div className="p-4 border-l border-r border-gray-200">
+                  <p className="font-medium mb-2 text-gray-900">프롬프트:</p>
+                  <p className="bg-gray-50 p-3 rounded mb-4 text-gray-900">{example.prompt}</p>
+                  <p className="font-medium mb-2 text-gray-900">합성된 응답:</p>
+                  <p className="bg-blue-50 p-3 rounded text-gray-900">{example.response}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>      
 
       <section className="py-16 px-4 bg-gray-100">
         <div className="container mx-auto max-w-4xl">
