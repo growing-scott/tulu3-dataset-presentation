@@ -20,8 +20,8 @@ export default function CurationPage() {
         <div className="slide-container">
           <h2 className="slide-title text-gray-800">프롬프트 큐레이션의 개념</h2>
           <div className="card mb-8">
-            <p className="slide-text text-white">
-              프롬프트 큐레이션은 기존 데이터셋에서 품질이 높은 프롬프트를 선별하여 모델이 효율적으로 학습하도록 하는 과정입니다. 불필요한 데이터(단순하거나 반복적인 데이터)를 제거하여 학습 효율성을 향상시킵니다.
+            <p className="slide-text">
+              프롬프트 큐레이션은 기존 데이터셋에서 품질이 높은 프롬프트를 선별하여 모델이 효율적으로 학습하도록 하는 과정입니다. <br/> 불필요한 데이터(단순하거나 반복적인 데이터)를 제거하여 학습 효율성을 향상시킵니다.
             </p>
           </div>
 
